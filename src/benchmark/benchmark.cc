@@ -2,7 +2,6 @@
 #include <vector>
 #include <random>
 #include "../algorithms/merge_sort_variants.h"
-#include "../algorithms/bitonic_sort.h"
 #include "../algorithms/quick_sort_variants.h"
 
 static std::vector<int> generateRandomArray(size_t size) {
@@ -132,20 +131,20 @@ BENCHMARK_MERGESORT(QuickSortVarSort3, quickSortVarSort3)
 BENCHMARK_MERGESORT(QuickSortVarSort4, quickSortVarSort4)
 BENCHMARK_MERGESORT(QuickSortVarSort5, quickSortVarSort5)
 
-#define REGISTERBENCHMARK(NAME)                                  \
-    BENCHMARK(BM##NAME##Random)                                  \
+#define REGISTER_BENCHMARK(NAME)                                  \
+    BENCHMARK(BM_##NAME##_Random)                                  \
         ->RangeMultiplier(2)                                     \
         ->Range(1 << 10, 1 << 20)                                \
         ->Unit(benchmark::kNanosecond)                          \
         ->UseRealTime()                                         \
         ->ReportAggregatesOnly(true);                           \
-    BENCHMARK(BM##NAME##Sorted)                                  \
+    BENCHMARK(BM_##NAME##_Sorted)                                  \
         ->RangeMultiplier(2)                                     \
         ->Range(1 << 10, 1 << 20)                                \
         ->Unit(benchmark::kNanosecond)                          \
         ->UseRealTime()                                         \
         ->ReportAggregatesOnly(true);                           \
-    BENCHMARK(BM##NAME##_NearlySorted)                           \
+    BENCHMARK(BM_##NAME##_NearlySorted)                           \
         ->RangeMultiplier(2)                                     \
         ->Range(1 << 10, 1 << 20)                                \
         ->Unit(benchmark::kNanosecond)                          \

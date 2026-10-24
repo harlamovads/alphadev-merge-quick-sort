@@ -18,7 +18,6 @@
 #include <utility>
 #include <vector>
 
-#include "gtest/gtest.h"
 
 void Sort3AlphaDev(int* buffer) {
   asm volatile(
