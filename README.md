@@ -1,3 +1,5 @@
+Исправленный форк оригинального репозитория, файл с графиками и прогоном см. в `results/benchmark_results.ipynb`
+
 # alphadev-merge-quick-sort
 
 ## Introduction
